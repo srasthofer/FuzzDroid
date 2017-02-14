@@ -1,0 +1,8 @@
+de.tu_darmstadt.sse.decisionmaker.analysis.filefuzzer.FileFuzzer
+de.tu_darmstadt.sse.decisionmaker.analysis.stringtotypeextractor.StringToPrimitiveTypeFuzzer
+de.tu_darmstadt.sse.decisionmaker.analysis.smartconstantdataextractor.SmartConstantDataExtractorFuzzyAnalysis
+%de.tu_darmstadt.sse.decisionmaker.analysis.simpleBooleanAnalysis.SimpleBooleanAnalysis
+de.tu_darmstadt.sse.decisionmaker.analysis.integritycheck.AntiIntegrityCheckFuzzyAnalysis
+%de.tu_darmstadt.sse.decisionmaker.analysis.randomFuzzer.SimpleRandomFuzzer
+de.tu_darmstadt.sse.decisionmaker.analysis.sourceconstantfuzzer.SourceConstantFuzzer
+%de.tu_darmstadt.sse.decisionmaker.analysis.dynamicValues.DynamicValueAnalysis

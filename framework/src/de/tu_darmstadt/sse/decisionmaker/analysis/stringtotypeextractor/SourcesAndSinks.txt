@@ -1,0 +1,26 @@
+<android.telephony.TelephonyManager: java.lang.String getDeviceId()> -> _SOURCE_
+<android.telephony.TelephonyManager: java.lang.String getNetworkCountryIso()> -> _SOURCE_
+<android.telephony.TelephonyManager: java.lang.String getNetworkOperator()> -> _SOURCE_
+<android.telephony.TelephonyManager: java.lang.String getSimCountryIso()> -> _SOURCE_
+<android.telephony.TelephonyManager: java.lang.String getSimSerialNumber()> -> _SOURCE_
+<android.telephony.TelephonyManager: java.lang.String getVoiceMailNumber()> -> _SOURCE_
+<android.telephony.TelephonyManager: java.lang.String getPhoneType()> -> _SOURCE_
+<android.telephony.TelephonyManager: java.lang.String getNetworkType()> -> _SOURCE_
+<android.telephony.SmsMessage: java.lang.String getDisplayOriginatingAddress()> -> _SOURCE_
+<android.app.SharedPreferencesImpl: java.lang.String getString(java.lang.String, java.lang.String)> -> _SOURCE_
+<java.net.InetAddress: java.lang.String getHostAddress()> -> _SOURCE_
+<java.util.Properties: java.lang.String getProperty(java.lang.String)> -> _SOURCE_
+<java.util.Properties: java.lang.String getProperty(java.lang.String,java.lang.String)> -> _SOURCE_
+
+
+<java.lang.Boolean: boolean parseBoolean(java.lang.String)> -> _SINK_
+<java.lang.Byte: byte parseByte(java.lang.String)> -> _SINK_
+<java.lang.Byte: byte parseByte(java.lang.String, int)> -> _SINK_
+<java.lang.Short: short parseShort(java.lang.String)> -> _SINK_
+<java.lang.Short: short parseShort(java.lang.String, int)> -> _SINK_
+<java.lang.Integer: int parseInteger(java.lang.String)> -> _SINK_
+<java.lang.Integer: int parseInteger(java.lang.String, int)> -> _SINK_
+<java.lang.Long: long parseLong(java.lang.String)> -> _SINK_
+<java.lang.Long: long parseLong(java.lang.String, int)> -> _SINK_
+<java.lang.Double: double parseDouble(java.lang.String)> -> _SINK_
+<java.lang.Float: float parseFloat(java.lang.String)> -> _SINK_

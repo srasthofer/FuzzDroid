@@ -1,0 +1,153 @@
+<project default="compile" name="soot-infoflow">
+	<property file="ant.settings" />
+	<target name="settings">
+		<fail
+			message="Please copy ant.settings.template to ant.settings, and set the variables in it."
+			unless="soot.jar" />
+	</target>
+
+
+	<target name="clean">
+		<delete quiet="true" dir="build" />
+	</target>
+
+
+	<target name="compile" depends="settings">
+		<mkdir dir="build/classes" />
+		<mkdir dir="build/runtimeClasses" />
+
+		<javac includeantruntime="true" source="1.7" target="1.7"
+			destdir="build/classes" debug="true">
+			<src path="src" />
+			<src path="sharedClasses" />
+
+			<classpath>
+				<pathelement location="${soot.jar}" />
+				<pathelement location="${heros.jar}" />
+				<pathelement location="${soot-infoflow.jar}" />
+				<pathelement location="${soot-infoflow-android.jar}" />
+				<pathelement location="${vasco.jar}" />
+				<fileset dir="libs">
+					<include name="*.jar" />
+				</fileset>
+				<fileset dir="android-jars">
+					<include name="*.jar" />
+				</fileset>
+			</classpath>
+		</javac>
+
+		<javac includeantruntime="true" source="1.7" target="1.7"
+			destdir="build/runtimeClasses" debug="true">
+			<src path="additionalAppClasses" />
+			<src path="sharedClasses" />
+			<classpath>
+				<fileset dir="libs">
+					<include name="*.jar" />
+				</fileset>
+				<fileset dir="android-jars">
+					<include name="*.jar" />
+				</fileset>
+			</classpath>
+		</javac>
+	</target>
+
+	<target name="compiletests" depends="settings, compile">
+		<mkdir dir="build/testClasses" />
+
+		<javac includeantruntime="true" source="1.7" target="1.7"
+			destdir="build/classes" debug="true">
+			<src path="tests" />
+
+			<classpath>
+				<pathelement location="${soot.jar}" />
+				<pathelement location="${heros.jar}" />
+				<pathelement location="${soot-infoflow.jar}" />
+				<pathelement location="${soot-infoflow-android.jar}" />
+				<pathelement location="${vasco.jar}" />
+				<fileset dir="libs">
+					<include name="*.jar" />
+				</fileset>
+			</classpath>
+		</javac>
+	
+	</target>
+
+	<target name="jar" depends="settings,compile">
+
+		<jar destfile="${constraints.jar}" manifest="META-INF/MANIFEST.MF">
+			<fileset dir="build/classes" />
+		</jar>
+
+		<jar destfile="${constraints-runtime.jar}" manifest="META-INF/MANIFEST.MF">
+			<fileset dir="build/runtimeClasses" />
+		</jar>
+
+	</target>
+
+	<target name="testjar" depends="settings,compiletests">
+	
+		<jar destfile="${constraints-tests.jar}" manifest="META-INF/MANIFEST.MF">
+			<fileset dir="build/testClasses" />
+		</jar>
+	
+	</target>
+	
+	<target name="javadoc">
+		<javadoc
+			classpath="build/classes:${soot.jar}:${heros.jar}:${soot-infoflow.jar}:${soot-infoflow-android.jar}:libs/*.jar:android-jars/*.jar"
+			sourcepath="src" destdir="javadoc" maxmemory="400m" windowtitle="FlowDroid API"
+			use="true" useexternalfile="true">
+			<fileset dir="src" includes="**/*.java" />
+			<fileset dir="additionalAppClasses" includes="**/*.java" />
+			<fileset dir="sharedClasses" includes="**/*.java" />
+
+		</javadoc>
+		<jar basedir="javadoc" destfile="${constraints-javadoc.jar}" />
+	</target>
+	
+	<target name="runtests" depends="compiletests">
+		<mkdir dir="reports" />
+		<junit printsummary="yes" fork="true" maxmemory="4G">
+			<classpath>
+				<pathelement location="${soot.jar}" />
+				<pathelement location="${heros.jar}" />
+				<pathelement location="${infoflow.jar}" />
+				<pathelement location="${infoflow-android.jar}" />
+				<pathelement location="${constraints-tests.jar}" />
+				
+				<pathelement location="build/classes" />
+				<pathelement location="build/testclasses" />
+				<fileset dir="lib">
+					<include name="*.jar" />
+				</fileset>
+			</classpath>
+			
+			<jvmarg value="-ea" />
+			
+			<!-- Make stuff debuggable -->
+			<!--
+			<jvmarg value="-Xdebug" />
+			<jvmarg value="-Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5432" />
+			-->
+
+			<formatter type="xml" usefile="true" />
+			<batchtest todir="reports">
+				<!--
+					We only run our own tests. SecuriBench Micro relies on too much stuff
+					we exclude.
+				-->
+				<fileset dir="build/testclasses" includes="de.tu_darmstadt.sse.systemTests/**/*Tests.class" />
+			</batchtest>
+		</junit>
+	</target>
+
+	<target name="reporttests" depends="runtests">
+		<junitreport tofile="TESTS-TestSuites.xml" todir="reports">
+			<fileset dir="reports">
+				<include name="TEST-*.xml" />
+			</fileset>
+			<report format="frames" todir="reports" />
+		</junitreport>
+	</target>
+
+</project>

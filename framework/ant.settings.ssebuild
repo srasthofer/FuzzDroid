@@ -1,0 +1,14 @@
+#Fill the following paths to compile with jars:
+
+#Location of soot.jar
+soot.jar=libs/soot-trunk.jar
+soot-infoflow.jar=libs/soot-infoflow.jar
+soot-infoflow-android.jar=libs/soot-infoflow-android.jar
+
+# Target JAR file
+constraints.jar=build/jar/constraints.jar
+constraints-runtime.jar=build/jar/constraints-runtime.jar
+constraints-javadoc.jar=build/jar/constraints-javadoc.jar
+constraints-tests.jar=build/jar/constraints-tests.jar
+
+vasco.jar=libs/vasco.jar

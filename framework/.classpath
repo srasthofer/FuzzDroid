@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" output="sharedClassesBin" path="sharedClasses"/>
+	<classpathentry kind="src" output="additionalAppClassesBin" path="additionalAppClasses"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/soot"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/soot-infoflow-android"/>
+	<classpathentry kind="lib" path="libs/commons-cli-1.2.jar"/>
+	<classpathentry kind="lib" path="libs/zhook.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/soot-infoflow"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry kind="lib" path="libs/jdktools.jar"/>
+	<classpathentry kind="lib" path="android-jars/android19_core_no_stub.jar"/>
+	<classpathentry kind="lib" path="android-jars/android19_framework_no_stub.jar"/>
+	<classpathentry kind="lib" path="libs/commons-io-2.4.jar"/>
+	<classpathentry kind="lib" path="libs/commons-codec-1.10.jar"/>
+	<classpathentry kind="lib" path="libs/ddmlib-24.3.0.jar"/>
+	<classpathentry kind="lib" path="libs/guava-19.0.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

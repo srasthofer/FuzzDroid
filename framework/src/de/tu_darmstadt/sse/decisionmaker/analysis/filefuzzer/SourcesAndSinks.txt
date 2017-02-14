@@ -1,0 +1,37 @@
+#SOURCES
+<android.content.Context: java.io.FileInputStream openFileInput(java.lang.String)> -> _SOURCE_
+<java.io.File: void <init>(java.io.File,java.lang.String)> -> _SOURCE_
+<java.io.File: void <init>(java.lang.String,java.lang.String)> -> _SOURCE_
+<java.io.File: void <init>(java.lang.String)> -> _SOURCE_
+<java.io.File: void <init>(java.net.URI)> -> _SOURCE_
+<android.content.ContextWrapper: java.io.FileInputStream openFileInput(java.lang.String)> -> _SOURCE_
+#<android.content.ContentResolver: java.io.InputStream openInputStream(android.net.Uri)> -> _SOURCE_
+<android.content.Context: java.io.File getFileStreamPath(java.lang.String)> -> _SOURCE_
+<android.content.Context: java.io.File getDir(java.lang.String,int)> -> _SOURCE_
+<android.content.Context: java.io.File getDatabasePath(java.lang.String)> -> _SOURCE_
+<android.content.ContextWrapper: java.io.File getFileStreamPath(java.lang.String)> -> _SOURCE_
+<android.content.ContextWrapper: java.io.File getDir(java.lang.String,int)> -> _SOURCE_
+<android.content.ContextWrapper: java.io.File getDatabasePath(java.lang.String)> -> _SOURCE_
+
+
+
+#SINKS
+# Properties Sinks
+<java.util.Properties: void load(java.io.InputStream)> -> _SINK_
+<java.util.Properties: void store(java.io.OutputStream,java.lang.String)> -> _SINK_
+
+# directory sinks
+<java.io.File: boolean isDirectory()> -> _SINK_
+<java.io.File: boolean mkdirs()> -> _SINK_
+<java.io.File: java.io.File[] listFiles()> -> _SINK_
+
+# database sinks
+<android.database.sqlite.SQLiteDatabase: android.database.sqlite.SQLiteDatabase openOrCreateDatabase(java.io.File,android.database.sqlite.SQLiteDatabase$CursorFactory)> -> _SINK_
+
+# zip file sinks
+<java.util.zip.ZipInputStream: void <init>(java.io.InputStream)> -> _SINK_
+<java.util.zip.ZipOutputStream: void <init>(java.io.OutputStream)> -> _SINK_
+<java.util.zip.ZipOutputStream: void putNextEntry(java.util.zip.ZipEntry)> -> _SINK_
+
+# image sinks
+<android.graphics.drawable.Drawable: android.graphics.drawable.Drawable createFromPath(java.lang.String)> -> _SINK_

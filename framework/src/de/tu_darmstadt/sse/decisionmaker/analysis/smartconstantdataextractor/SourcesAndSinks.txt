@@ -1,0 +1,67 @@
+<android.telephony.TelephonyManager: java.lang.String getNetworkOperator()> android.permission.READ_PHONE_STATE -> _SOURCE_
+<android.telephony.TelephonyManager: java.lang.String getSimSerialNumber()> -> _SOURCE_
+<android.telephony.TelephonyManager: java.lang.String getSubscriberId()> -> _SOURCE_
+<android.telephony.TelephonyManager: java.lang.String getLine1Number()> -> _SOURCE_
+<android.telephony.TelephonyManager: java.lang.String getDeviceId()> -> _SOURCE_
+<android.telephony.TelephonyManager: java.lang.String getSimOperator()> -> _SOURCE_
+<android.telephony.TelephonyManager: java.lang.String getSimOperatorName()> -> _SOURCE_
+
+<android.content.SharedPreferences: java.lang.String getString(java.lang.String, java.lang.String)> -> _SOURCE_
+<android.content.SharedPreferences: int getInt(java.lang.String, int)> -> _SOURCE_
+
+<android.location.Location: double getLatitude()> -> _SOURCE_
+<android.location.Location: double getLongitude()> -> _SOURCE_
+<android.location.Address: java.lang.String getPostalCode()> -> _SOURCE_
+
+<java.net.HttpURLConnection: java.io.InputStream getInputStream()> -> _SOURCE_
+
+<java.io.BufferedReader: java.lang.String readLine()> -> _SOURCE_
+
+
+<android.telephony.SmsMessage: java.lang.String getDisplayOriginatingAddress()> -> _SOURCE_
+<android.telephony.SmsMessage: java.lang.String getOriginatingAddress()> -> _SOURCE_
+<android.telephony.SmsMessage: java.lang.String getDisplayMessageBody()> -> _SOURCE_
+<android.telephony.SmsMessage: java.lang.String getMessageBody()> -> _SOURCE_
+<android.telephony.gsm.SmsMessage:: java.lang.String getDisplayMessageBody()> -> _SOURCE_
+<android.telephony.gsm.SmsMessage:: java.lang.String getOriginatingAddress()> -> _SOURCE_
+
+<android.database.Cursor: java.lang.String getString(int)> -> _SOURCE_
+
+<java.text.SimpleDateFormat: java.lang.String format(java.util.Date)> -> _SOURCE_
+
+<android.content.pm.PackageManager: java.util.List getInstalledApplications(int)> -> _SOURCE_
+
+<java.io.BufferedReader: java.lang.String readLine()> -> _SOURCE_
+<java.io.FileInputStream: int read(byte[], int, int)> -> _SOURCE_
+
+<java.net.InetAddress: java.lang.String getHostAddress()> -> _SOURCE_
+
+<java.io.File: java.lang.String getAbsolutePath()> -> _SOURCE_
+<java.util.Locale: java.lang.String getLanguage()> -> _SOURCE_
+
+<java.io.FileInputStream: int read(byte[], int, int)> -> _SOURCE_
+<java.util.Properties: java.lang.String getProperty(java.lang.String)> -> _SOURCE_
+
+<android.content.ComponentName: java.lang.String getPackageName()> -> _SOURCE_
+
+<java.lang.String: java.lang.String substring(int, int)> -> _SINK_
+<java.lang.String: java.lang.String substring(int)> -> _SINK_
+<java.lang.String: boolean equals(java.lang.Object)> -> _SINK_
+<java.lang.String: boolean equalsIgnoreCase(java.lang.String)> -> _SINK_
+<java.lang.String: int indexOf(java.lang.String)> -> _SINK_
+<java.lang.String: boolean startsWith(java.lang.String)> -> _SINK_
+<java.lang.String: boolean matches(java.lang.String)> -> _SINK_
+<java.lang.String: java.lang.String replaceAll(java.lang.String, java.lang.String)> -> _SINK_
+<java.lang.Integer: int parseInt(java.lang.String)> -> _SINK_
+<java.lang.String: boolean contains(java.lang.CharSequence)> -> _SINK_
+
+<java.io.File: void <init>(java.lang.String)> -> _SINK_
+
+<org.apache.http.client.methods.HttpGet: void <init>(java.lang.String)> -> _SINK_
+<java.net.URL: void <init>(java.lang.String)> -> _SINK_
+
+<java.util.regex.Pattern: java.util.regex.Matcher matcher(java.lang.CharSequence)> -> _SINK_
+
+<android.telephony.SmsManager: void sendTextMessage(java.lang.String, java.lang.String, java.lang.String, android.app.PendingIntent, android.app.PendingIntent)> -> _SINK_
+
+<android.telephony.gsm.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)> -> _SINK_
